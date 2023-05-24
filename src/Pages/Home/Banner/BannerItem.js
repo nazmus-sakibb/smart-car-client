@@ -14,7 +14,6 @@ const BannerItem = ({ slide }) => {
                     Price for Car <br />
                     Servicing
                 </h1>
-                {/* <p className='text-white text-lg'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p> */}
             </div>
             <div style={{top: "62%"}} className="absolute flex justify-end transform -translate-y-1/2 left-24 w-2/5">
                 <p className='text-white text-lg'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
