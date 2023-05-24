@@ -4,18 +4,19 @@ import './BannerItem.css';
 const BannerItem = ({ slide }) => {
     const { image, id, prev, next } = slide;
     return (
-        <div id={`slide${id}`} className="carousel-item relative w-full">
+        <div id={`slide${id}`} style={{height: '600px'}} className="carousel-item relative w-full overflow-hidden rounded-xl">
             <div className="carousel-img">
-                <img src={image} className="w-full rounded-xl" alt='' />
+                <img src={image} className="w-full" alt='' />
             </div>
-            <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
+            <div className="absolute flex-col justify-end transform -translate-y-1/2 left-24 top-1/3 w-2/5">
                 <h1 className='text-6xl font-bold text-white'>
                     Affordable <br />
                     Price for Car <br />
                     Servicing
                 </h1>
+                {/* <p className='text-white text-lg'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p> */}
             </div>
-            <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/2 w-2/5">
+            <div style={{top: "62%"}} className="absolute flex justify-end transform -translate-y-1/2 left-24 w-2/5">
                 <p className='text-white text-lg'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4 w-2/5">
