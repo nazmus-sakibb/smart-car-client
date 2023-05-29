@@ -6,7 +6,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     const { user } = useContext(AuthContext);
 
-    // const url = `http://localhost:5000/orders?email=${user?.email}`
+
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${user?.email}`)
             .then(res => res.json())
@@ -30,12 +30,35 @@ const Orders = () => {
                 })
 
         }
+    };
+
+
+    const handleStatusUpdate = id => {
+        fetch(`http://localhost:5000/orders/${id}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({ status: 'Approved' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = orders.filter(odr => odr._id !== id);
+                    const approving = orders.find(odr => odr._id === id);
+                    approving.status = 'Approved';
+
+                    const newOrders = [approving, ...remaining];
+                    setOrders(newOrders);
+                }
+            })
     }
 
 
     return (
         <div>
-            <h2 className="text-5xl">You have {orders.length}</h2>
+            <h2 className="text-5xl">Orders: {orders.length}</h2>
 
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
@@ -59,6 +82,7 @@ const Orders = () => {
                                 key={order._id}
                                 order={order}
                                 handleDelete={handleDelete}
+                                handleStatusUpdate={handleStatusUpdate}
                             />)
                         }
                     </tbody>
