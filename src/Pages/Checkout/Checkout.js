@@ -38,7 +38,7 @@ const Checkout = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged){
-                    // alert('order placed successfully');
+                    alert('Order placed successfully');
                     form.reset();
                 }
             })

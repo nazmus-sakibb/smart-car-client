@@ -31,17 +31,18 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold">{customer}</div>
-                        <div className="text-sm opacity-50">{phone}</div>
+                        <div className="font-bold">{serviceName}</div>
+                        {/* <div className="text-sm opacity-50">{phone}</div> */}
                     </div>
                 </div>
             </td>
             <td>
-                {serviceName}
-                <br />
-                <span className="badge badge-ghost badge-sm">${price}</span>
+                <div className="font-semibold">{customer}</div>
+                <div className="text-sm opacity-50">{phone}</div>
             </td>
-            <td>Purple</td>
+            <td>
+                <span className="badge badge-ghost badge-sm text-xl p-3 font-semibold">${price}</span>
+            </td>
             <th>
                 <button
                     onClick={() => handleStatusUpdate(_id)}
