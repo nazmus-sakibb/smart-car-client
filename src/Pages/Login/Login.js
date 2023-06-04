@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import loginImg from '../../assets/images/login/login.svg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
 
     const {login} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    let from = location.state?.from?.pathname || '/';
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,12 +21,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             })
             .catch(err => console.error(err));
     }
 
     return (
-        <div className="hero my-20">
+        <div className="hero pt-10 pb-20">
             <div className="hero-content flex-col lg:flex-row grid gap-20 md:grid-cols-2">
                 <div className="text-center lg:text-left">
                     <img className='w-3/4' src={loginImg} alt="" />
@@ -40,7 +45,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>

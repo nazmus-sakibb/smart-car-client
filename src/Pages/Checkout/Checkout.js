@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const Checkout = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext);
-    console.log(user.email);
+    // console.log(user?.email);
 
     const handlePlaceOrder = e => {
         e.preventDefault();

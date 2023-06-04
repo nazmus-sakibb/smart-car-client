@@ -21,7 +21,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className="hero my-20">
+        <div className="hero pt-10 pb-20">
             <div className="hero-content flex-col lg:flex-row grid gap-20 md:grid-cols-2">
                 <div className="text-center lg:text-left">
                     <img className='w-3/4' src={loginImg} alt="" />
@@ -45,7 +45,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Confirm Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
