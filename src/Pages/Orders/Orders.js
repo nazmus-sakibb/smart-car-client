@@ -4,7 +4,7 @@ import OrderRow from './OrderRow';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -13,8 +13,16 @@ const Orders = () => {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
         })
-            .then(res => res.json())
-            .then(data => setOrders(data));
+            .then(res => {
+                if(res.status === 401 || res.status === 403){
+                    logout();
+                }
+                return res.json();
+            })
+            .then(data => {
+                // console.log('received', data);
+                setOrders(data);
+            });
     }, [user?.email]);
 
     const handleDelete = id => {
