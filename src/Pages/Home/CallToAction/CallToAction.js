@@ -5,7 +5,7 @@ import location from '../../../assets/icons/location.svg';
 
 const CallToAction = () => {
     return (
-        <div className="card w-full bg-zinc-950 text-primary-content mb-10">
+        <div className="card w-full bg-zinc-950 text-primary-content my-10">
             <div className="card-body">
                 <div className='md:flex justify-evenly'>
                     <div className='flex justify-between items-center'>

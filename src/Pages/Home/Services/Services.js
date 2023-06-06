@@ -13,7 +13,7 @@ const Services = () => {
         <div className='py-20'>
             <div className='text-center'>
                 <p className="text-xl font-bold text-orange-600">Service</p>
-                <h2 className="text-5xl font-semibold">Our Sercice Area</h2>
+                <h2 className="text-5xl font-semibold mt-3 mb-5">Our Sercice Area</h2>
                 <p>The majority have suffered alteration in some form, by injected humour, <br /> or randomised words which don't look even slightly believable.</p>
             </div>
 
