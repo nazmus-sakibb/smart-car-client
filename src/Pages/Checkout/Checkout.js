@@ -29,7 +29,7 @@ const Checkout = () => {
         //     alert('Phone number should be 10 characters or longer')
         // } else {}
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://smart-car-server-nazmus-sakibb.vercel.app/orders', {
             method: "POST",
             headers: {
                 "content-type": "application/json ",

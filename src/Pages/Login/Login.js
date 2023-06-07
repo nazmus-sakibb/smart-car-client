@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import loginImg from '../../assets/images/login/login.svg';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import loginImg from '../../assets/images/login/login.svg';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
                 console.log(currentUser);
 
                 // get jwt token
-                fetch(`http://localhost:5000/jwt`, {
+                fetch(`https://smart-car-server-nazmus-sakibb.vercel.app/jwt`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
