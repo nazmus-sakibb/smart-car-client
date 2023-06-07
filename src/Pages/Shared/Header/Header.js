@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.svg';
+import logo from '../../../assets/logo.png';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
@@ -33,8 +33,8 @@ const Header = () => {
     return (
         <div className="navbar bg-base-100 h-28 mb-4">
             <div>
-                <Link to='/' className="">
-                    <img src={logo} alt="" />
+                <Link to='/'>
+                    <img className='' src={logo} alt="" />
                 </Link>
             </div>
             <div className="navbar-start">
